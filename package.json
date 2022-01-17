@@ -1,0 +1,17 @@
+{
+  "name": "p3_hammouti_code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "node-sass": "^7.0.1",
+    "sass": "^1.48.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "sass": "sass --watch ./src/styles/scss/main.scss:./public/css/style.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

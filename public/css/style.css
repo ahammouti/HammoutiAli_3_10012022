@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+h1 {
+  font-family: Shrikhand, Roboto, sans-serif;
+}
+
+body,
+html {
+  font-family: Roboto, sans-serif;
+}
+
+/* ============= VARIABLES ============= */
+
+/*# sourceMappingURL=style.css.map */
