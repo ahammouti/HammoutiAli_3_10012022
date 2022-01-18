@@ -1,0 +1,12 @@
+@import '../utils/mixins';
+
+.header {
+    z-index: 500;
+    height: 63px;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.212);
+
+    &__logo {
+        height: 100%;
+        @include flex-center;
+    }
+}
