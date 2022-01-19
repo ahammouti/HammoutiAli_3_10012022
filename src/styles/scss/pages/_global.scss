@@ -10,3 +10,40 @@
         @include flex-center;
     }
 }
+
+.footer {
+    background: #353535;
+    height: 200px;
+
+    .content {
+        margin-left: 25px;
+        height: 100%;
+        padding-top: 25px;
+
+        &__logo {
+            color: #fff;
+            padding-bottom: 15px;
+        }
+
+        &__list {
+
+
+            li {
+                color: #fff;
+                margin: 7px 0;
+            }
+
+            li:nth-child(1) {
+                span {
+                    padding-right: 11px;
+                    font-size: 18px;
+                }
+            }
+
+            span {
+                font-size: 15px;
+                padding-right: 8px;
+            }
+        }
+    }
+}

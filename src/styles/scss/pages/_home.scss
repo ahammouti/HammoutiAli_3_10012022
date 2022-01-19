@@ -1,5 +1,5 @@
-@import '../utils/mixins';
-@import '../utils/variables';
+@import '../utils/variables', '../utils/mixins';
+@import '../base/typography';
 
 .home {
     .header {
@@ -146,6 +146,9 @@
         }
 
         &__restaurants {
+            padding-top: 50px;
+            background: $color-bg;
+
             .content {
                 margin: 0 20px;
 
@@ -199,6 +202,7 @@
                                 @include flex-center;
                                 height: 100%;
                                 flex: 0.2;
+                                padding-left: 40px;
                                 margin-right: 20px;
                             }
 
@@ -243,6 +247,23 @@
                             }
 
                         }
+                    }
+
+                    .card.card--exclu::after {
+                        z-index: 100;
+                        content: "Nouveau";
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        position: absolute;
+                        top: 20px;
+                        right: 20px;
+                        width: 100px;
+                        height: 30px;
+                        color: #0A8C6D;
+                        font-weight: bold;
+                        border-radius: 3px;
+                        background: $color-secondary;
                     }
                 }
             }

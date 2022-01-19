@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-h1 {
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+h1,
+.footer h3 {
   font-family: Shrikhand, Roboto, sans-serif;
 }
 
@@ -88,8 +91,44 @@ fieldset {
   align-items: center;
 }
 
+.footer {
+  background: #353535;
+  height: 200px;
+}
+.footer .content {
+  margin-left: 25px;
+  height: 100%;
+  padding-top: 25px;
+}
+.footer .content__logo {
+  color: #fff;
+  padding-bottom: 15px;
+}
+.footer .content__list li {
+  color: #fff;
+  margin: 7px 0;
+}
+.footer .content__list li:nth-child(1) span {
+  padding-right: 11px;
+  font-size: 18px;
+}
+.footer .content__list span {
+  font-size: 15px;
+  padding-right: 8px;
+}
+
 /* ============= VARIABLES ============= */
 /* === couleurs === */
+h1,
+.footer h3 {
+  font-family: Shrikhand, Roboto, sans-serif;
+}
+
+body,
+html {
+  font-family: Roboto, sans-serif;
+}
+
 .home .header {
   position: fixed;
   background-color: #fff;
@@ -224,6 +263,10 @@ fieldset {
   text-align: center;
   border-radius: 50%;
 }
+.home .main__restaurants {
+  padding-top: 50px;
+  background: #f6f6f6;
+}
 .home .main__restaurants .content {
   margin: 0 20px;
 }
@@ -276,6 +319,7 @@ fieldset {
   align-items: center;
   height: 100%;
   flex: 0.2;
+  padding-left: 40px;
   margin-right: 20px;
 }
 .home .main__restaurants .content__cards .card__overlay .overlay__right input[type=checkbox] {
@@ -311,6 +355,22 @@ fieldset {
     fill-opacity: 1;
     transform: scale(1);
   }
+}
+.home .main__restaurants .content__cards .card.card--exclu::after {
+  z-index: 100;
+  content: "Nouveau";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 100px;
+  height: 30px;
+  color: #0A8C6D;
+  font-weight: bold;
+  border-radius: 3px;
+  background: #99E2D0;
 }
 
 /*# sourceMappingURL=style.css.map */
