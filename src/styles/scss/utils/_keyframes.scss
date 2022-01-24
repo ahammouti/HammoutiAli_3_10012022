@@ -1,0 +1,53 @@
+// ============== Anim coeur =============== // 
+@keyframes heart {
+    0% {
+        fill-opacity: 0;
+        transform: scale(1);
+    }
+
+    50% {
+        fill-opacity: 0.5;
+        transform: scale(1.2);
+    }
+
+    100% {
+        fill-opacity: 1;
+        transform: scale(1);
+    }
+}
+
+// ============== Anim loader container =============== // 
+@keyframes loadingSpinner {
+    0% {
+        opacity: 1;
+        transform: translateX(0%);
+        z-index: 4;
+    }
+
+    20% {
+        transform: translateX(0%);
+    }
+
+    50% {
+        transform: translateX(100%);
+
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(100%);
+        z-index: 0;
+        display: none;
+    }
+}
+
+// ============== Anim rotation loader =============== // 
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

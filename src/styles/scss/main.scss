@@ -1,3 +1,4 @@
 @import './base/typography', './base/reset';
-@import './utils/variables';
+@import './components/loader';
+@import './utils/variables', './utils/mixins', './utils/keyframes';
 @import './pages/global', './pages/home', './pages/menusRestaurants';

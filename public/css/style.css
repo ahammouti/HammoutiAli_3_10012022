@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 h1,
 .footer h3 {
   font-family: Shrikhand, Roboto, sans-serif;
@@ -77,10 +75,99 @@ fieldset {
   margin: 0;
 }
 
+.loader-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: loadingSpinner 3s alternate;
+  animation-iteration-count: 1;
+  background: white;
+  opacity: 0;
+  z-index: 0;
+}
+.loader-container img {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  animation: lds-dual-ring 1.4s ease-in-out;
+}
+.loader-container::before {
+  content: "Chargement...";
+  position: absolute;
+  top: 58%;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #000;
+}
+
+.lds-dual-ring {
+  width: 80px;
+  height: 80px;
+}
+
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #ce23ce;
+  border-color: #b600b6 transparent #e913e9 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
 /* ============= VARIABLES ============= */
 /* === couleurs === */
+@keyframes heart {
+  0% {
+    fill-opacity: 0;
+    transform: scale(1);
+  }
+  50% {
+    fill-opacity: 0.5;
+    transform: scale(1.2);
+  }
+  100% {
+    fill-opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes loadingSpinner {
+  0% {
+    opacity: 1;
+    transform: translateX(0%);
+    z-index: 4;
+  }
+  20% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(100%);
+    z-index: 0;
+    display: none;
+  }
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .header {
-  z-index: 500;
+  z-index: 5;
   height: 63px;
   box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.212);
 }
@@ -117,21 +204,13 @@ fieldset {
   padding-right: 8px;
 }
 
-/* ============= VARIABLES ============= */
-/* === couleurs === */
-h1,
-.footer h3 {
-  font-family: Shrikhand, Roboto, sans-serif;
+.home {
+  height: 100%;
+  position: relative;
 }
-
-body,
-html {
-  font-family: Roboto, sans-serif;
-}
-
 .home .header {
   position: fixed;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.788);
   right: 0;
   left: 0;
   top: 0;
@@ -162,6 +241,49 @@ html {
 }
 .home .main__heroBanner {
   background: #f6f6f6;
+  position: relative;
+  /* ================ Tablet format ================ */
+}
+@media screen and (min-width: 992px) {
+  .home .main__heroBanner .content {
+    display: flex;
+    background: #000;
+    text-align: left;
+  }
+}
+@media screen and (min-width: 768px) {
+  .home .main__heroBanner .bg-overlay {
+    position: absolute;
+    background: url("https://images.unsplash.com/photo-1498654896293-37aacf113fd9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .home .main__heroBanner .bg-overlay::after {
+    content: "";
+    position: absolute;
+    background: rgba(0, 0, 0, 0.61);
+    width: 100%;
+    height: 100%;
+  }
+  .home .main__heroBanner .content {
+    color: #eeeeee;
+    font-size: 1.2rem;
+    font-weight: normal;
+  }
+  .home .main__heroBanner .content .content__title {
+    z-index: 0;
+  }
+  .home .main__heroBanner .content .content__paragraph {
+    z-index: 0;
+    color: #f6f6f6;
+    font-weight: normal;
+  }
+  .home .main__heroBanner .content .content__link {
+    z-index: 0;
+    box-shadow: none;
+  }
 }
 .home .main__heroBanner .content {
   margin: 0 25px;
@@ -342,22 +464,7 @@ html {
   animation: heart 0.7s ease-in-out;
   stroke-width: 5px;
 }
-@keyframes heart {
-  0% {
-    fill-opacity: 0;
-    transform: scale(1);
-  }
-  50% {
-    fill-opacity: 0.5;
-    transform: scale(1.2);
-  }
-  100% {
-    fill-opacity: 1;
-    transform: scale(1);
-  }
-}
 .home .main__restaurants .content__cards .card.card--exclu::after {
-  z-index: 100;
   content: "Nouveau";
   display: flex;
   justify-content: center;

@@ -1,10 +1,10 @@
-@import '../utils/variables', '../utils/mixins';
-@import '../base/typography';
-
 .home {
+    height: 100%;
+    position: relative;
+
     .header {
         position: fixed;
-        background-color: #fff;
+        background-color: rgba(255, 255, 255, 0.788);
         right: 0;
         left: 0;
         top: 0;
@@ -35,6 +35,56 @@
 
         &__heroBanner {
             background: $color-bg;
+            position: relative;
+
+            @media screen and (min-width: 992px) {
+                .content {
+                    display: flex;
+                    background: #000;
+                    text-align: left;
+                }
+            }
+
+            /* ================ Tablet format ================ */
+            @media screen and (min-width: 768px) {
+                .bg-overlay {
+                    position: absolute;
+                    background: url("https://images.unsplash.com/photo-1498654896293-37aacf113fd9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+                    height: 100%;
+                    width: 100%;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        background: rgba(0, 0, 0, 0.61);
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .content {
+                    color: #eeeeee;
+                    font-size: 1.2rem;
+                    font-weight: normal;
+                }
+
+                .content .content__title {
+                    z-index: 0;
+                }
+
+                .content .content__paragraph {
+                    z-index: 0;
+                    color: #f6f6f6;
+                    font-weight: normal;
+                }
+
+                .content .content__link {
+                    z-index: 0;
+                    box-shadow: none;
+                }
+            }
 
             .content {
                 margin: 0 25px;
@@ -228,29 +278,10 @@
                                 animation: heart 0.7s ease-in-out;
                                 stroke-width: 5px;
                             }
-
-                            @keyframes heart {
-                                0% {
-                                    fill-opacity: 0;
-                                    transform: scale(1);
-                                }
-
-                                50% {
-                                    fill-opacity: 0.5;
-                                    transform: scale(1.2);
-                                }
-
-                                100% {
-                                    fill-opacity: 1;
-                                    transform: scale(1);
-                                }
-                            }
-
                         }
                     }
 
                     .card.card--exclu::after {
-                        z-index: 100;
                         content: "Nouveau";
                         display: flex;
                         justify-content: center;
