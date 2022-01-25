@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"
+        integrity="sha512-Tn2m0TIpgVyTzzvmxLNuqbSJH3JP8jm+Cy3hvHrW7ndTDcJ1w5mBiksqDBb8GpE2ksktFvDB/ykZ0mDpsZj20w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="../../public/css/style.css">
-    <title>Menu à la française | Ohmyfood</title>
+    <title>Menu À la française | Ohmyfood</title>
 </head>
 
 <body>
@@ -14,14 +17,85 @@
         <img src="../styles/scss/components/loader.png" alt="">
         <div class="lds-dual-ring"></div>
     </div>
-    <div class="frenchMenu">
+    <div class="menuRestaurants">
         <header class="header">
+            <span href="./index.html" class="go-back">
+                <a href="./index.html">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </span>
             <h1 class="header__logo">
                 <a href="./index.html">ohmyfood</a>
             </h1>
         </header>
+        <main class="main">
+            <div class="card">
+                <img class="card__img" src="../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="">
+                <div class="card__overlay">
+                    <div class="head">
+                        <div class="head__left" href="./frenchStyleMenu.html">
+                            <h2 class="head__title">À la française</h2>
+                        </div>
+                        <span class="head__right">
+                            <input type="checkbox" name="cb-3" id="cb-3">
+                            <label for="cb-3">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="heart"
+                                    class="svg-inline--fa fa-heart fa-w-16" role="img"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                    <path
+                                        d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z">
+                                    </path>
+                                    <defs>
+                                        <linearGradient id="lgrad" x1="100%" y1="15%" x2="0%" y2="85%">
+
+                                            <stop offset="0%" style="stop-color:rgb(147,86,220);stop-opacity:1.00" />
+                                            <stop offset="91%" style="stop-color:rgb(255,121,218);stop-opacity:1.00" />
+
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </label>
+                        </span>
+                    </div>
+                    <section class="entrees">
+                        <h3 class="title-entree">Entrées</h3>
+                        <div class="item">
+                            <div class="item__left">
+                                <h4 class="item__title">Tartare de poulpe acidulé</h4>
+                                <p class="item__paragraph">Aux zests d'orange</p>
+                            </div>
+                            <div class="item__right">
+                                <span class="price">
+                                    25€
+                                </span>
+                                <span class="wrap-icon">
+                                    <span>
+                                        <i class="fas fa-check-circle"></i>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item__left">
+                                <h4 class="item__title">Tartare de poulpe acidulé</h4>
+                                <p class="item__paragraph">Aux zests d'orange</p>
+                            </div>
+                            <div class="item__right">
+                                <span class="price">
+                                    25€
+                                </span>
+                                <span class="wrap-icon">
+                                    <span>
+                                        <i class="fas fa-check-circle"></i>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
     </div>
-    <h1>Menu à la franççaise</h1>
 
 </body>
 

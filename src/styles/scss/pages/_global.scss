@@ -1,5 +1,3 @@
-@import '../utils/mixins';
-
 .header {
     z-index: 5;
     height: 63px;
@@ -26,7 +24,6 @@
         }
 
         &__list {
-
 
             li {
                 color: #fff;

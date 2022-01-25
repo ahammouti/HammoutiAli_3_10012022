@@ -4,15 +4,12 @@
     height: 100%;
     left: 0;
     right: 0;
-    z-index: 10;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
     animation: loadingSpinner 3s alternate;
     animation-iteration-count: 1;
     background: rgb(255, 255, 255);
     opacity: 0;
-    z-index: 0;
+    z-index: -1;
 
     img {
         position: absolute;
