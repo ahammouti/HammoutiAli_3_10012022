@@ -1,3 +1,13 @@
+// ================================================= DESKTOP ================================================= //
+@media screen and (min-width: 992px) {
+    .home {
+        .main {}
+    }
+}
+
+
+
+// ================================================= MOBILE ================================================= //
 .home {
     .header {
         position: fixed;
@@ -34,55 +44,6 @@
             background: $color-bg;
             position: relative;
 
-            @media screen and (min-width: 992px) {
-                .content {
-                    display: flex;
-                    background: #000;
-                    text-align: left;
-                }
-            }
-
-            /* ================ Tablet format ================ */
-            @media screen and (min-width: 768px) {
-                .bg-overlay {
-                    position: absolute;
-                    background: url("https://images.unsplash.com/photo-1498654896293-37aacf113fd9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
-                    height: 100%;
-                    width: 100%;
-                    background-size: cover;
-                    background-repeat: no-repeat;
-
-                    &::after {
-                        content: "";
-                        position: absolute;
-                        background: rgba(0, 0, 0, 0.61);
-                        width: 100%;
-                        height: 100%;
-                    }
-                }
-
-                .content {
-                    color: #eeeeee;
-                    font-size: 1.2rem;
-                    font-weight: normal;
-                }
-
-                .content .content__title {
-                    z-index: 0;
-                }
-
-                .content .content__paragraph {
-                    z-index: 0;
-                    color: #f6f6f6;
-                    font-weight: normal;
-                }
-
-                .content .content__link {
-                    z-index: 0;
-                    box-shadow: none;
-                }
-            }
-
             .content {
                 margin: 0 25px;
                 padding: 40px 0;
@@ -101,14 +62,7 @@
                 }
 
                 &__link {
-                    @include flex-center;
-                    @include gradient-button;
-                    @include box-shw;
-                    color: #fff;
-                    font-weight: 580;
-                    padding: 20px 0;
-                    border-radius: 50px;
-                    width: 230px;
+                    @include btn-style-gradient;
                 }
             }
         }
@@ -292,6 +246,77 @@
                         font-weight: bold;
                         border-radius: 3px;
                         background: $color-secondary;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ================================================= TABLETS ================================================= //
+@media screen and (min-width: 768px) {
+    .home {
+        .main {
+            &__heroBanner {
+                .bg-overlay {
+                    position: absolute;
+                    background: url("https://images.unsplash.com/photo-1498654896293-37aacf113fd9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+                    height: 100%;
+                    width: 100%;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        background: rgba(0, 0, 0, 0.61);
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .content {
+                    color: #eeeeee;
+                    font-size: 1.2rem;
+                    font-weight: normal;
+                }
+
+                .content .content__title {
+                    z-index: 0;
+                }
+
+                .content .content__paragraph {
+                    z-index: 0;
+                    color: #f6f6f6;
+                    font-weight: normal;
+                }
+
+                .content .content__link {
+                    z-index: 0;
+                    box-shadow: none;
+                }
+            }
+
+            &__howItWorks {
+                .content {
+                    margin: 0 80px;
+
+                    &__list {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr 1fr;
+                        grid-gap: 25px;
+                    }
+                }
+            }
+
+            &__restaurants {
+                .content {
+                    margin: 0 80px;
+
+                    &__cards {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        grid-gap: 25px;
                     }
                 }
             }
