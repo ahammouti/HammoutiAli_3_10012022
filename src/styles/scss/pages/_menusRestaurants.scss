@@ -1,3 +1,4 @@
+// ================================================= MOBILE ================================================= //
 .menuRestaurants {
     .header {
         position: relative;
@@ -79,7 +80,7 @@
                     }
                 }
 
-                .entrees:not(:nth-child(2)) {
+                .entrees:not(:nth-child(1)) {
                     padding-top: 40px;
                 }
 
@@ -88,6 +89,7 @@
                     flex-direction: column;
                     margin: 20px 15px;
                     row-gap: 13px;
+                    overflow-x: hidden;
 
                     .title-entree {
                         text-transform: uppercase;
@@ -105,23 +107,6 @@
                         }
                     }
 
-                    @keyframes apparition {
-                        0% {
-                            opacity: 0;
-                            transform: translateY(100%);
-                        }
-
-                        50% {
-                            transform: translateY(50%);
-                            opacity: 0;
-                        }
-
-                        100% {
-                            transform: translateY(0%);
-                            opacity: 1;
-                        }
-                    }
-
                     .item:nth-child(2) {
                         animation: apparition 1s ease-out;
                     }
@@ -134,6 +119,10 @@
                         animation: apparition 2.2s ease-out;
                     }
 
+                    .item:nth-child(5) {
+                        animation: apparition 2.5s ease-out;
+                    }
+
                     .item {
                         @include flex-center;
                         flex-wrap: nowrap;
@@ -141,23 +130,25 @@
                         height: 80px;
                         border-radius: 13px;
                         background: rgb(255, 255, 255);
-                        @include box-shw;
+                        width: 99%;
+                        margin-bottom: 5px;
+                        box-shadow: 0px 3px 5px rgba(138, 138, 138, 0.342);
 
                         &__left {
                             flex: 1;
-                            margin-left: 15px;
-                            margin: 15px 15px;
+                            margin: 15px 10px;
+                            white-space: nowrap;
+                            overflow-x: hidden;
 
                             .item__title {
-                                max-width: 100%;
                                 overflow-x: hidden;
-                                height: 100%;
+                                text-overflow: ellipsis;
                                 font-weight: bold;
                             }
 
                             .item__paragraph {
-                                max-width: 100%;
                                 overflow-x: hidden;
+                                text-overflow: ellipsis;
                             }
                         }
 
@@ -166,9 +157,8 @@
                             padding: 0;
                             margin: 0;
                             height: 100%;
-                            flex: 0.6;
-                            right: 0;
                             overflow: hidden;
+                            transition: flex .7s ease-in-out;
 
                             .price {
                                 @include flex-center;
@@ -176,9 +166,7 @@
                                 height: 100%;
                                 margin-top: 10px;
                                 font-weight: bold;
-                                transform: translateX(100%);
                                 border-radius: 0 13px 13px 0;
-                                transition: .5s ease-in-out;
                             }
 
                             .wrap-icon {
@@ -188,52 +176,54 @@
                                 background: $color-secondary;
                                 @include flex-center;
                                 width: 100%;
-                                transform: translateX(150%);
                                 height: 100%;
-                                transition: .5s ease-in-out;
+                                transition: transform .7s ease-in-out;
+                                transform: translateX(100%);
 
                                 span {
-                                    transition: transform .2s ease-in-out;
+                                    transition: transform .5s ease-in-out;
                                 }
                             }
                         }
 
                         &:hover {
                             cursor: pointer;
+                            transition: all .5s ease-in-out;
 
 
-                            .item__left .item__title {
-                                max-width: 150px;
-                                text-overflow: ellipsis;
-                                white-space: nowrap;
-                                transition: max-width .5s ease-in-out;
-                            }
-
+                            .item__left .item__title,
                             .item__left .item__paragraph {
-                                max-width: 170px;
-                                white-space: nowrap;
                                 text-overflow: ellipsis;
-                                transition: max-width .5s ease-in-out;
+                                white-space: nowrap;
                             }
 
-                            .item__right .wrap-icon {
-                                transform: translateX(0px);
-                                transition: transform .5s ease-in-out;
+                            .item__right {
+                                flex: 0.6;
+                                transition: flex 1s ease;
 
-                                &:hover {
-                                    background: rgba(13, 231, 78, 0.644);
+                                .wrap-icon {
+                                    transform: translate(0%);
+                                    transition: transform .7s ease;
+                                    background: $color-secondary;
+
+                                    &:hover {
+                                        background: rgba(13, 231, 78, 0.644);
+                                    }
+
+                                    span {
+                                        transform: rotate(360deg);
+                                        transition: transform .8s ease-in-out;
+                                    }
                                 }
 
-                                span {
-                                    transform: rotate(360deg);
-                                    transition: transform .8s ease-in-out;
+                                .price {
+                                    margin-left: -5%;
+                                    transition: margin-left .7s ease-in-out;
                                 }
+
+
                             }
 
-                            .item__right .price {
-                                transition: transform .5s ease-in-out;
-                                transform: translateX(0%);
-                            }
                         }
                     }
                 }
@@ -248,6 +238,90 @@
                     &__link {
                         @include btn-style-gradient;
                         width: 200px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ================================================= TABLETS ================================================= //
+@media screen and (min-width: 768px) {
+    .menuRestaurants {
+        .main {
+            .card {
+                &__img {
+                    object-fit: cover;
+                    max-height: 450px;
+                }
+
+                &__overlay {
+                    background: #f6f6f6d5;
+                    margin: 0 80px;
+                    margin-top: -150px;
+                    margin-bottom: 80px;
+                    @include box-shw;
+                    border-radius: 10px 10px;
+
+                    .head {
+                        background: none;
+                        margin-left: 60px;
+                        margin-right: 60px;
+                    }
+
+                    .entrees {
+                        margin-left: 80px;
+                        margin-right: 80px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ================================================= DESKTOP ================================================= //
+@media screen and (min-width: 1200px) {
+    .menuRestaurants {
+        .main {
+            .card {
+                &__img {
+                    object-fit: cover;
+                    max-height: 450px;
+                }
+
+                &__overlay {
+                    background: #f6f6f6d5;
+                    height: 100%;
+                    margin: 0 0px;
+                    margin-top: -100px;
+                    border-radius: 0px;
+
+                    .head {
+                        background: none;
+                        margin-left: 80px;
+                        margin-right: 80px;
+                    }
+
+                    .container-sections {
+                        display: grid;
+                        min-height: 450px;
+                        grid-template-columns: 1fr 1fr 1fr;
+                        margin: 0 100px;
+                        background: rgb(255, 255, 255);
+                        border-radius: 13px;
+                        @include box-shw;
+
+                        .entrees {
+                            margin: 0;
+                            margin-top: 30px;
+                            padding: 25px;
+                        }
+                    }
+
+                    .order {
+                        display: flex;
+                        justify-content: center;
+                        width: 100%;
                     }
                 }
             }

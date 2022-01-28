@@ -118,6 +118,20 @@ fieldset {
     transform: rotate(360deg);
   }
 }
+@keyframes apparition {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  50% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
 .loader-container {
   position: fixed;
   width: 100%;
@@ -564,7 +578,7 @@ fieldset {
   animation: heart 0.7s ease-in-out;
   stroke-width: 5px;
 }
-.menuRestaurants .main .card__overlay .entrees:not(:nth-child(2)) {
+.menuRestaurants .main .card__overlay .entrees:not(:nth-child(1)) {
   padding-top: 40px;
 }
 .menuRestaurants .main .card__overlay .entrees {
@@ -572,6 +586,7 @@ fieldset {
   flex-direction: column;
   margin: 20px 15px;
   row-gap: 13px;
+  overflow-x: hidden;
 }
 .menuRestaurants .main .card__overlay .entrees .title-entree {
   text-transform: uppercase;
@@ -587,20 +602,6 @@ fieldset {
   left: 0;
   background-color: #99E2D0;
 }
-@keyframes apparition {
-  0% {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  50% {
-    transform: translateY(50%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-}
 .menuRestaurants .main .card__overlay .entrees .item:nth-child(2) {
   animation: apparition 1s ease-out;
 }
@@ -610,6 +611,9 @@ fieldset {
 .menuRestaurants .main .card__overlay .entrees .item:nth-child(4) {
   animation: apparition 2.2s ease-out;
 }
+.menuRestaurants .main .card__overlay .entrees .item:nth-child(5) {
+  animation: apparition 2.5s ease-out;
+}
 .menuRestaurants .main .card__overlay .entrees .item {
   display: flex;
   justify-content: center;
@@ -618,33 +622,32 @@ fieldset {
   height: 80px;
   border-radius: 13px;
   background: white;
-  box-shadow: 2px 10px 21px -4px #a8a8a8;
-  -webkit-box-shadow: 2px 10px 21px -4px #a8a8a8;
-  -moz-box-shadow: 2px 10px 21px -4px #a8a8a8;
+  width: 99%;
+  margin-bottom: 5px;
+  box-shadow: 0px 3px 5px rgba(138, 138, 138, 0.342);
 }
 .menuRestaurants .main .card__overlay .entrees .item__left {
   flex: 1;
-  margin-left: 15px;
-  margin: 15px 15px;
+  margin: 15px 10px;
+  white-space: nowrap;
+  overflow-x: hidden;
 }
 .menuRestaurants .main .card__overlay .entrees .item__left .item__title {
-  max-width: 100%;
   overflow-x: hidden;
-  height: 100%;
+  text-overflow: ellipsis;
   font-weight: bold;
 }
 .menuRestaurants .main .card__overlay .entrees .item__left .item__paragraph {
-  max-width: 100%;
   overflow-x: hidden;
+  text-overflow: ellipsis;
 }
 .menuRestaurants .main .card__overlay .entrees .item__right {
   display: flex;
   padding: 0;
   margin: 0;
   height: 100%;
-  flex: 0.6;
-  right: 0;
   overflow: hidden;
+  transition: flex 0.7s ease-in-out;
 }
 .menuRestaurants .main .card__overlay .entrees .item__right .price {
   display: flex;
@@ -654,9 +657,7 @@ fieldset {
   height: 100%;
   margin-top: 10px;
   font-weight: bold;
-  transform: translateX(100%);
   border-radius: 0 13px 13px 0;
-  transition: 0.5s ease-in-out;
 }
 .menuRestaurants .main .card__overlay .entrees .item__right .wrap-icon {
   color: #fff;
@@ -667,31 +668,30 @@ fieldset {
   justify-content: center;
   align-items: center;
   width: 100%;
-  transform: translateX(150%);
   height: 100%;
-  transition: 0.5s ease-in-out;
+  transition: transform 0.7s ease-in-out;
+  transform: translateX(100%);
 }
 .menuRestaurants .main .card__overlay .entrees .item__right .wrap-icon span {
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 .menuRestaurants .main .card__overlay .entrees .item:hover {
   cursor: pointer;
+  transition: all 0.5s ease-in-out;
 }
-.menuRestaurants .main .card__overlay .entrees .item:hover .item__left .item__title {
-  max-width: 150px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  transition: max-width 0.5s ease-in-out;
-}
+.menuRestaurants .main .card__overlay .entrees .item:hover .item__left .item__title,
 .menuRestaurants .main .card__overlay .entrees .item:hover .item__left .item__paragraph {
-  max-width: 170px;
-  white-space: nowrap;
   text-overflow: ellipsis;
-  transition: max-width 0.5s ease-in-out;
+  white-space: nowrap;
+}
+.menuRestaurants .main .card__overlay .entrees .item:hover .item__right {
+  flex: 0.6;
+  transition: flex 1s ease;
 }
 .menuRestaurants .main .card__overlay .entrees .item:hover .item__right .wrap-icon {
-  transform: translateX(0px);
-  transition: transform 0.5s ease-in-out;
+  transform: translate(0%);
+  transition: transform 0.7s ease;
+  background: #99E2D0;
 }
 .menuRestaurants .main .card__overlay .entrees .item:hover .item__right .wrap-icon:hover {
   background: rgba(13, 231, 78, 0.644);
@@ -701,8 +701,8 @@ fieldset {
   transition: transform 0.8s ease-in-out;
 }
 .menuRestaurants .main .card__overlay .entrees .item:hover .item__right .price {
-  transition: transform 0.5s ease-in-out;
-  transform: translateX(0%);
+  margin-left: -5%;
+  transition: margin-left 0.7s ease-in-out;
 }
 .menuRestaurants .main .card__overlay .order {
   display: flex;
@@ -725,6 +725,71 @@ fieldset {
   border-radius: 50px;
   width: 230px;
   width: 200px;
+}
+
+@media screen and (min-width: 768px) {
+  .menuRestaurants .main .card__img {
+    object-fit: cover;
+    max-height: 450px;
+  }
+  .menuRestaurants .main .card__overlay {
+    background: #f6f6f6d5;
+    margin: 0 80px;
+    margin-top: -150px;
+    margin-bottom: 80px;
+    box-shadow: 2px 10px 21px -4px #a8a8a8;
+    -webkit-box-shadow: 2px 10px 21px -4px #a8a8a8;
+    -moz-box-shadow: 2px 10px 21px -4px #a8a8a8;
+    border-radius: 10px 10px;
+  }
+  .menuRestaurants .main .card__overlay .head {
+    background: none;
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+  .menuRestaurants .main .card__overlay .entrees {
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .menuRestaurants .main .card__img {
+    object-fit: cover;
+    max-height: 450px;
+  }
+  .menuRestaurants .main .card__overlay {
+    background: #f6f6f6d5;
+    height: 100%;
+    margin: 0 0px;
+    margin-top: -100px;
+    border-radius: 0px;
+  }
+  .menuRestaurants .main .card__overlay .head {
+    background: none;
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+  .menuRestaurants .main .card__overlay .container-sections {
+    display: grid;
+    min-height: 450px;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 100px;
+    background: white;
+    border-radius: 13px;
+    box-shadow: 2px 10px 21px -4px #a8a8a8;
+    -webkit-box-shadow: 2px 10px 21px -4px #a8a8a8;
+    -moz-box-shadow: 2px 10px 21px -4px #a8a8a8;
+  }
+  .menuRestaurants .main .card__overlay .container-sections .entrees {
+    margin: 0;
+    margin-top: 30px;
+    padding: 25px;
+  }
+  .menuRestaurants .main .card__overlay .order {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
