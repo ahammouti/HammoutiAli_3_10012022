@@ -217,6 +217,7 @@ fieldset {
   padding-right: 8px;
 }
 
+/* ================================================= MOBILE ================================================= */
 .home .header {
   position: fixed;
   background-color: rgba(255, 255, 255, 0.788);
@@ -447,6 +448,7 @@ fieldset {
   background: #99E2D0;
 }
 
+/* ================================================= TABLETS ================================================= */
 @media screen and (min-width: 768px) {
   .home .main__heroBanner .bg-overlay {
     position: absolute;
@@ -497,6 +499,7 @@ fieldset {
     grid-gap: 25px;
   }
 }
+/* ================================================= DESKTOP ================================================= */
 @media screen and (min-width: 992px) {
   .home .main__howItWorks .content {
     margin: 0 180px;
