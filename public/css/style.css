@@ -244,7 +244,7 @@ fieldset {
   width: 100%;
   margin: 0 15px;
 }
-.home .main__locationInfo .locationInfo__content p {
+.home .main__locationInfo .locationInfo__content span {
   font-weight: bold;
   margin-left: 15px;
 }
@@ -322,7 +322,7 @@ fieldset {
   font-size: 1.2rem;
   font-weight: bold;
 }
-.home .main__howItWorks .content__listItem span p {
+.home .main__howItWorks .content__listItem span span {
   color: #000;
   font-size: 1rem;
   margin-left: 15px;
@@ -333,7 +333,7 @@ fieldset {
 .home .main__howItWorks .content__listItem-active span {
   color: #9356DC;
 }
-.home .main__howItWorks .content__listItem-active span p {
+.home .main__howItWorks .content__listItem-active span span {
   color: #000;
 }
 .home .main__howItWorks .content__listItem::before {
@@ -427,7 +427,7 @@ fieldset {
   fill: #fff;
 }
 .home .main__restaurants .content__cards .card__overlay .overlay__right input[type=checkbox]:checked + label {
-  fill: url("#lgrad");
+  fill: url(#lgrad);
   animation: heart 0.7s ease-in-out;
   stroke-width: 5px;
 }

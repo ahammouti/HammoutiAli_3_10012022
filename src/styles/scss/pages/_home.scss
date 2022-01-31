@@ -25,7 +25,7 @@
                 margin: 0 15px;
             }
 
-            .locationInfo__content p {
+            .locationInfo__content span {
                 font-weight: bold;
                 margin-left: 15px;
             }
@@ -98,7 +98,7 @@
                         font-size: 1.2rem;
                         font-weight: bold;
 
-                        p {
+                        span {
                             color: #000;
                             font-size: 1rem;
                             margin-left: 15px;
@@ -112,7 +112,7 @@
                     span {
                         color: #9356DC;
 
-                        p {
+                        span {
                             color: #000;
                         }
                     }
@@ -216,7 +216,7 @@
                             }
 
                             .overlay__right input[type="checkbox"]:checked+label {
-                                fill: url("#lgrad");
+                                fill: url(#lgrad);
                                 animation: heart 0.7s ease-in-out;
                                 stroke-width: 5px;
                             }
