@@ -13,11 +13,17 @@
 </head>
 
 <body>
+    <!-- ========================================== LOADER SPINNER ========================================== -->
     <div class="loader-container">
         <img src="../styles/scss/components/loader.png" alt="">
         <div class="lds-dual-ring"></div>
     </div>
+    <!-- fin loader -->
+
+    <!-- ========================================== MENU PAGE ========================================== -->
     <div class="menuRestaurants">
+
+        <!-- ================ Header ================ -->
         <header class="header">
             <span class="go-back">
                 <a href="../../index.html">
@@ -28,13 +34,18 @@
                 <a href="../../index.html">ohmyfood</a>
             </h1>
         </header>
+        <!-- fin header -->
+
+        <!-- ================ Main ================ -->
         <main class="main">
+
+            <!-- Container card -->
             <div class="card">
-                <img class="card__img" src="../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="">
-                <div class="card__overlay">
+                <img class="card__img" src="../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="">
+                <div class="card__overlay card__overlay--enchantedNote">
                     <div class="head">
-                        <div class="head__left" href="./frenchStyleMenu.html">
-                            <h2 class="head__title">La palette du goût</h2>
+                        <div class="head__left">
+                            <h2 class="head__title">La note enchantée</h2>
                         </div>
                         <span class="head__right">
                             <input type="checkbox" name="cb-3" id="cb-3">
@@ -57,10 +68,210 @@
                             </label>
                         </span>
                     </div>
+                    <div class="container-sections">
+                        <section class="entrees">
+                            <h3 class="title-entree">Entrées</h3>
+                            <div class="item">
+                                <div class="item__left">
+                                    <h4 class="item__title">Ravioles de foie gras </h4>
+                                    <p class="item__paragraph">Accompagnés de leur crème à la truffe</p>
+                                </div>
+                                <div class="item__right">
+                                    <span class="price">
+                                        25€
+                                    </span>
+                                    <span class="wrap-icon">
+                                        <span>
+                                            <i class="fas fa-check-circle"></i>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="item__left">
+                                    <h4 class="item__title">Caviar osciètre</h4>
+                                    <p class="item__paragraph">Sur blini à la farine de blé noir</p>
+                                </div>
+                                <div class="item__right">
+                                    <span class="price">
+                                        35€
+                                    </span>
+                                    <span class="wrap-icon">
+                                        <span>
+                                            <i class="fas fa-check-circle"></i>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="item__left">
+                                    <h4 class="item__title">Homard et espuma de potiron</h4>
+                                    <p class="item__paragraph">Mariné aux zestes d'orange</p>
+                                </div>
+                                <div class="item__right">
+                                    <span class="price">
+                                        20€
+                                    </span>
+                                    <span class="wrap-icon">
+                                        <span>
+                                            <i class="fas fa-check-circle"></i>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="item__left">
+                                    <h4 class="item__title">Foie gras de canard cuit entier</h4>
+                                    <p class="item__paragraph">Confiture de figue et pain toasté</p>
+                                </div>
+                                <div class="item__right">
+                                    <span class="price">
+                                        35€
+                                    </span>
+                                    <span class="wrap-icon">
+                                        <span>
+                                            <i class="fas fa-check-circle"></i>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="entrees">
+                            <h3 class="title-entree">Plats</h3>
+                            <div class="item">
+                                <div class="item__left">
+                                    <h4 class="item__title">Noix de coquilles Saint-Jacques</h4>
+                                    <p class="item__paragraph">Sur lit de purée de céleri-rave</p>
+                                </div>
+                                <div class="item__right">
+                                    <span class="price">
+                                        40€
+                                    </span>
+                                    <span class="wrap-icon">
+                                        <span>
+                                            <i class="fas fa-check-circle"></i>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="item__left">
+                                    <h4 class="item__title">Langoustine poêlée</h4>
+                                    <p class="item__paragraph">Purée de patate douce</p>
+                                </div>
+                                <div class="item__right">
+                                    <span class="price">
+                                        35€
+                                    </span>
+                                    <span class="wrap-icon">
+                                        <span>
+                                            <i class="fas fa-check-circle"></i>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="item__left">
+                                    <h4 class="item__title">Mijoté de queue de boeuf</h4>
+                                    <p class="item__paragraph">Et riz sauvage aux zestes de citron</p>
+                                </div>
+                                <div class="item__right">
+                                    <span class="price">
+                                        44€
+                                    </span>
+                                    <span class="wrap-icon">
+                                        <span>
+                                            <i class="fas fa-check-circle"></i>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="entrees">
+                            <h3 class="title-entree">Désserts</h3>
+                            <div class="item">
+                                <div class="item__left">
+                                    <h4 class="item__title">Macaron noisette et chocolat</h4>
+                                    <p class="item__paragraph">Glace au caramel brun et sel de Guérande</p>
+                                </div>
+                                <div class="item__right">
+                                    <span class="price">
+                                        18€
+                                    </span>
+                                    <span class="wrap-icon">
+                                        <span>
+                                            <i class="fas fa-check-circle"></i>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="item__left">
+                                    <h4 class="item__title">Baba au rhum revisité</h4>
+                                    <p class="item__paragraph">Avec son coulis de citron</p>
+                                </div>
+                                <div class="item__right">
+                                    <span class="price">
+                                        22€
+                                    </span>
+                                    <span class="wrap-icon">
+                                        <span>
+                                            <i class="fas fa-check-circle"></i>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="item__left">
+                                    <h4 class="item__title">Tarte au citron meringuée</h4>
+                                    <p class="item__paragraph">Déstructurée</p>
+                                </div>
+                                <div class="item__right">
+                                    <span class="price">
+                                        23€
+                                    </span>
+                                    <span class="wrap-icon">
+                                        <span>
+                                            <i class="fas fa-check-circle"></i>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="order">
+                        <a class="order__link" href="#">Commander</a>
+                    </div>
                 </div>
             </div>
         </main>
+        <footer class="footer">
+            <div class="content">
+                <h3 class="content__logo"><a href="#">ohmyfood</a></h3>
+                <ul class="content__list">
+                    <li>
+                        <a href="#">
+                            <span><i class="fas fa-utensils"></i></span>
+                            Proposer un restaurant
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span><i class="fas fa-hands-helping"></i></span>
+                            Devenir partenaire
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">Mentions légales</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
     </div>
+
 </body>
 
 </html>
