@@ -508,6 +508,7 @@ fieldset {
     margin: 0 180px;
   }
 }
+/* ================================================= MOBILE ================================================= */
 .menuRestaurants .header {
   position: relative;
 }
@@ -730,6 +731,7 @@ fieldset {
   width: 200px;
 }
 
+/* ================================================= TABLETS ================================================= */
 @media screen and (min-width: 768px) {
   .menuRestaurants .main .card__img {
     object-fit: cover;
@@ -755,6 +757,7 @@ fieldset {
     margin-right: 80px;
   }
 }
+/* ================================================= DESKTOP ================================================= */
 @media screen and (min-width: 1200px) {
   .menuRestaurants .main .card__img {
     object-fit: cover;
